@@ -1,6 +1,7 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import '../flowchart.dart';
+import 'flowChartModel.dart';
 import 'globals.dart' as global;
 
 class SimpleUI extends StatefulWidget {
@@ -16,34 +17,24 @@ class _SimpleUIState extends State<SimpleUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: NavBar(),
+        // drawer: NavBar(),
         appBar: AppBar(
-            centerTitle: true,
-            title: const Text(
-              'PRE CONSULTING CLINICAL WORKFLOW',
-              style: TextStyle(
-                fontSize: 27,
-                color: Colors.white,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 2,
-              ),
+          centerTitle: true,
+          title: const Text(
+            'PRE CONSULTING CLINICAL WORKFLOW',
+            style: TextStyle(
+              fontSize: 27,
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2,
             ),
-            automaticallyImplyLeading: false,
-            // removes back arrow
-            backgroundColor: Colors.blue[900],
-            // sets background color to light blue
-            elevation: 0,
-            actions: [
-              // IconButton(
-              //   // onPressed: (){
-              //   //   Navigator.push(
-              //   //       context,
-              //   //       MaterialPageRoute(
-              //   //           builder: (context) => UserDetails()));
-              //   // },
-              //   icon: Icon(Icons.supervised_user_circle),
-              // ),
-            ]),
+          ),
+          automaticallyImplyLeading: false,
+          // removes back arrow
+          backgroundColor: Colors.blue[900],
+          // sets background color to light blue
+          elevation: 0,
+        ),
         body: Row(
           children: [
             Container(
@@ -63,8 +54,8 @@ class _SimpleUIState extends State<SimpleUI> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const SimpleUI(
-                                name: '',
-                              )));
+                                    name: '',
+                                  )));
                     },
                     child: Container(
                       margin: EdgeInsets.all(10),
@@ -84,25 +75,18 @@ class _SimpleUIState extends State<SimpleUI> {
                       Icons.person,
                       color: Colors.blue.shade900,
                     ),
-                    // onTap: () {
-                    //   // Navigate to QuestionAdd class
-                    //   // Navigator.pushNamed(context, '/adduser');
-                    //   Navigator.push(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //           builder: (context) => const AddUserScreen()));
-                    // },
                   ),
                   const Divider(),
                   ListTile(
                     title: const Text('Patient Info Flowchart'),
-                    // onTap: () {
-                    //   // Navigate to QuestionAdd class
-                    //   Navigator.push(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //           builder: (context) => const FlowChartModel(title:'', name: 'info')));
-                    // },
+                    onTap: () {
+                      // Navigate to QuestionAdd class
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const flowchart(title: '', name: 'info')));
+                    },
                   ),
                   const Divider(),
                 ],
@@ -152,13 +136,13 @@ class _SimpleUIState extends State<SimpleUI> {
                               crossAxisCount: 3,
                               mainAxisSpacing: 8,
                               crossAxisSpacing: 8,
-                              itemCount: 11,
+                              itemCount: 10,
                               builder: (context, index) {
                                 return Container(
                                   height:
-                                  MediaQuery.of(context).size.height * 0.35,
+                                      MediaQuery.of(context).size.height * 0.35,
                                   width:
-                                  MediaQuery.of(context).size.width * 0.26,
+                                      MediaQuery.of(context).size.width * 0.26,
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
                                   ),
@@ -174,49 +158,80 @@ class _SimpleUIState extends State<SimpleUI> {
                                                     (BuildContext context) {
                                                   return Dialog(
                                                     child: Container(
-                                                      height:MediaQuery.of(context).size.height /2.5,
-                                                      width:MediaQuery.of(context).size.width /2.5,
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height /
+                                                              2.5,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.6,
                                                       padding:
-                                                      EdgeInsets.all(16.0),
+                                                          EdgeInsets.all(16.0),
                                                       child: Row(
                                                         mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
                                                         children: <Widget>[
                                                           InkWell(
                                                             onTap: () {
-                                                              // Navigator.push(
-                                                              //     context,
-                                                              //     MaterialPageRoute(
-                                                              //         builder: (context) =>
-                                                              //             FlowChartModel(
-                                                              //               title:
-                                                              //               '',
-                                                              //               name: global.flow[index],
-                                                              //             )));
+                                                              Navigator.push(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder: (context) => flowchart(
+                                                                          title:
+                                                                              '',
+                                                                          name: global.flow[index][0] )));
                                                             },
                                                             child: Container(
-                                                              height: MediaQuery.of(context).size.height * 0.3,
-                                                              width: MediaQuery.of(context).size.width * 0.17,
-                                                              decoration: BoxDecoration(
-                                                                border: Border.all(),
-                                                                color: Colors.blue.shade900,
-                                                                borderRadius: BorderRadius.circular(10.0),
+                                                              height: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .height *
+                                                                  0.3,
+                                                              width: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.17,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                border: Border
+                                                                    .all(),
+                                                                color: Colors
+                                                                    .blue
+                                                                    .shade900,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10.0),
                                                               ),
                                                               child: Center(
                                                                 child: Column(
-                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
                                                                   children: [
-                                                                    Icon(Icons.male_outlined,
+                                                                    Icon(
+                                                                      Icons
+                                                                          .male_outlined,
                                                                       // Add the male icon
-                                                                      size: 50.0,
+                                                                      size:
+                                                                          50.0,
                                                                       // Set the size of the iconcolor: Colors.white, // Set the color of the icon
                                                                     ),
-                                                                    Text("Male",
+                                                                    Text(
+                                                                      "Male",
                                                                       style:
-                                                                      TextStyle(color: Colors.white,
-                                                                        fontWeight: FontWeight.bold,
-                                                                        fontSize: 20.0,
+                                                                          TextStyle(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontSize:
+                                                                            20.0,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -226,35 +241,129 @@ class _SimpleUIState extends State<SimpleUI> {
                                                           ),
                                                           InkWell(
                                                             onTap: () {
-                                                              // Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                                                              //     FlowChartModel(
-                                                              //       title: '', name: global.flow[index],
-                                                              //     )));
+                                                              Navigator.push(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder: (context) => flowchart(
+                                                                          title:
+                                                                          '',
+                                                                          name: global.flow[index][1] )));
                                                             },
                                                             child: Container(
-                                                              height: MediaQuery.of(context).size.height * 0.3,
-                                                              width: MediaQuery.of(context).size.width * 0.17,
-                                                              decoration: BoxDecoration(
-                                                                border: Border.all(),
-                                                                color: Colors.blue.shade900,
-                                                                borderRadius: BorderRadius.circular(10.0),
+                                                              height: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .height *
+                                                                  0.3,
+                                                              width: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.17,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                border: Border
+                                                                    .all(),
+                                                                color: Colors
+                                                                    .blue
+                                                                    .shade900,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10.0),
                                                               ),
                                                               child: Center(
                                                                 child: Column(
-                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
                                                                   children: [
                                                                     Icon(
-                                                                      Icons.female_outlined,
+                                                                      Icons
+                                                                          .female_outlined,
                                                                       // Add the male icon
-                                                                      size: 50.0,
+                                                                      size:
+                                                                          50.0,
                                                                       // Set the size of the icon
-                                                                      color: Colors.white, // Set the color of the icon
+                                                                      color: Colors
+                                                                          .white, // Set the color of the icon
                                                                     ),
-                                                                    Text("Female",
-                                                                      style: TextStyle(
-                                                                        color: Colors.white,
-                                                                        fontWeight: FontWeight.bold,
-                                                                        fontSize: 20.0,
+                                                                    Text(
+                                                                      "Female",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontSize:
+                                                                            20.0,
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          InkWell(
+                                                            onTap: () {
+                                                              Navigator.push(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder: (context) => flowchart(
+                                                                          title:
+                                                                          '',
+                                                                          name: global.flow[index][2] )));
+                                                            },
+                                                            child: Container(
+                                                              height: MediaQuery.of(
+                                                                  context)
+                                                                  .size
+                                                                  .height *
+                                                                  0.3,
+                                                              width: MediaQuery.of(
+                                                                  context)
+                                                                  .size
+                                                                  .width *
+                                                                  0.17,
+                                                              decoration:
+                                                              BoxDecoration(
+                                                                border: Border
+                                                                    .all(),
+                                                                color: Colors
+                                                                    .blue
+                                                                    .shade900,
+                                                                borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                    10.0),
+                                                              ),
+                                                              child: Center(
+                                                                child: Column(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .female_outlined,
+                                                                      // Add the male icon
+                                                                      size:
+                                                                      50.0,
+                                                                      // Set the size of the icon
+                                                                      color: Colors
+                                                                          .white, // Set the color of the icon
+                                                                    ),
+                                                                    Text(
+                                                                      "Others",
+                                                                      style:
+                                                                      TextStyle(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontWeight:
+                                                                        FontWeight.bold,
+                                                                        fontSize:
+                                                                        20.0,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -271,12 +380,12 @@ class _SimpleUIState extends State<SimpleUI> {
                                             },
                                             child: Container(
                                               width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                                      .size
+                                                      .width *
                                                   0.10,
                                               height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
+                                                      .size
+                                                      .height *
                                                   0.19,
                                               margin: const EdgeInsets.only(
                                                   left: 10, top: 10),
@@ -303,25 +412,25 @@ class _SimpleUIState extends State<SimpleUI> {
                                           Expanded(
                                             child: Container(
                                               height: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                                      .size
+                                                      .width *
                                                   0.05,
                                               width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                                      .size
+                                                      .width *
                                                   0.120,
                                               decoration: const BoxDecoration(
-                                                // border: Border.all(),
-                                              ),
+                                                  // border: Border.all(),
+                                                  ),
                                               child: Center(
                                                 child: Text(
                                                   global.name[index][0],
                                                   overflow:
-                                                  TextOverflow.ellipsis,
+                                                      TextOverflow.ellipsis,
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                     fontFamily:
-                                                    'Times New Roman',
+                                                        'Times New Roman',
                                                     fontSize: 20,
                                                     inherit: true,
                                                     color: Colors.black,
@@ -336,25 +445,25 @@ class _SimpleUIState extends State<SimpleUI> {
                                       Expanded(
                                         child: Container(
                                           height: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.070,
                                           width: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.20,
                                           decoration: const BoxDecoration(
-                                            // border: Border.all()
-                                          ),
+                                              // border: Border.all()
+                                              ),
                                           padding:
-                                          const EdgeInsets.only(top: 0.110),
+                                              const EdgeInsets.only(top: 0.110),
                                           child: Center(
                                             child: Text(
                                               global.name[index][1],
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                 debugLabel:
-                                                'whiteCupertino subtitle',
+                                                    'whiteCupertino subtitle',
                                                 fontFamily: 'Times New Roman',
                                                 fontSize: 13,
                                                 inherit: true,

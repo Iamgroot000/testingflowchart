@@ -6,59 +6,54 @@ List name = [
     "Neonatologist \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "TODDLER \n AGE (3M - 2Y)",
+    "TODDLER \n AGE (3M - 3Y)",
     "Paediatrician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "PEDIATRIC \n AGE (2Y - 6Y)",
+    "PEDIATRIC \n AGE (3Y - 12Y)",
     "Paediatrician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    'ADOLESCENT \n AGE (7Y - 12Y)',
+    'ADOLESCENT \n AGE (13Y - 18Y)',
     "Adolescent \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
-  ],
-  [
-    'SEMIADULT \n AGE (13 - 17Y)',
-    "Physician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
     "ADULT \n AGE (18Y - 30Y)",
     "Physician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "ADULT \n AGE (31Y - 40Y)",
+    "ADULT \n AGE (30Y - 45Y)",
     "Physician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "MIDDLE AGED \n AGE (41Y - 60Y)",
+    "MIDDLE AGED \n AGE (45Y - 60Y)",
     "Physician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "AGED \n AGE (61Y - 70Y)",
+    "AGED \n AGE (60Y - 70Y)",
     "Physician \nDr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "OLD AGED \n AGE (71Y - 85Y)",
+    "OLD AGED \n AGE (70Y - 80Y)",
     "Physician \n Dr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ],
   [
-    "OLD AGED \n AGE (85Y +)",
+    "OLD AGED \n AGE (80Y +)",
     "Physician \n Dr. XYZ \n Phone No: +91 884442111 \n Changes Require Approvals MedOnGo , BMC and Doctor Approvals",
   ]
 ];
 
 List flow = [
-  ["NeoNatal"],
-  ["Toddler"],
-  ['Pediatric'],
-  ['Adoloscent'],
-  ['SEMIADULT Male','SEMIADULT Female'],
-  ['ADULT (18Y - 30Y) Male','ADULT (18Y - 30Y) Female'],
-  ['ADULT (31Y - 40Y) Male', 'ADULT (31Y - 40Y) Female'],
-  ['MIDDLE AGED (41Y - 60Y) Male','MIDDLE AGED (41Y - 60Y) Female'],
-  ['AGED (61Y - 70Y) Male','AGED (61Y - 70Y) Female'],
-  ['OLD AGED (71Y - 85Y) Male','OLD AGED (71Y - 85Y) Female'],
-  ['85+ Male', '85+ Female']
+  ["NeoNatal Male", "NeoNatal Female", "NeoNatal Others"],
+  ["Toddler Male", "Toddler Female", "Toddler Others"],
+  ["Pediatric Male", "Pediatric Female", "Pediatric Others"],
+  ["Adolescent Male", "Adolescent Female", "Adolescent Others"],
+  ['adultMale(18y-30y)','adultFemale(18y-30y)',' adultOthers(18y-30y)'],
+  ['adultMale(31y-45y)','adultFemale(31y-45y)', "adultOthers(31y-45y)"],
+  ['middleAgedMale(46y-60y)', 'middleAgedFemale(46y-60y)', 'middleAgedOthers(46y-60y)'],
+  ['agedAdultMale(61y-70y)','agedAdultFemale(61y-70y)', "agedAdultOthers(61y-70y)"],
+  ['oldAgedMale(71Y-80Y)','oldAgedFemale(71Y-80Y)','oldAgedOthers(71Y-80Y)'],
+  ['80+Male', '80+female', '80+Others']
 ];
 
 
