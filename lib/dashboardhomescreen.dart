@@ -220,6 +220,8 @@ class _SimpleUIState extends State<SimpleUI> {
                                                                       // Add the male icon
                                                                       size:
                                                                           50.0,
+                                                                      color: Colors
+                                                                          .white,
                                                                       // Set the size of the iconcolor: Colors.white, // Set the color of the icon
                                                                     ),
                                                                     Text(
@@ -346,7 +348,7 @@ class _SimpleUIState extends State<SimpleUI> {
                                                                   children: [
                                                                     Icon(
                                                                       Icons
-                                                                          .female_outlined,
+                                                                          .transgender_outlined,
                                                                       // Add the male icon
                                                                       size:
                                                                       50.0,

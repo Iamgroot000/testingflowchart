@@ -48,15 +48,52 @@ List flow = [
   ["Toddler Male", "Toddler Female", "Toddler Others"],
   ["Pediatric Male", "Pediatric Female", "Pediatric Others"],
   ["Adolescent Male", "Adolescent Female", "Adolescent Others"],
-  ['adultMale(18y-30y)','adultFemale(18y-30y)',' adultOthers(18y-30y)'],
-  ['adultMale(31y-45y)','adultFemale(31y-45y)', "adultOthers(31y-45y)"],
-  ['middleAgedMale(46y-60y)', 'middleAgedFemale(46y-60y)', 'middleAgedOthers(46y-60y)'],
-  ['agedAdultMale(61y-70y)','agedAdultFemale(61y-70y)', "agedAdultOthers(61y-70y)"],
-  ['oldAgedMale(71Y-80Y)','oldAgedFemale(71Y-80Y)','oldAgedOthers(71Y-80Y)'],
+  ['adultMale(18y-30y)', 'adultFemale(18y-30y)', 'adultOthers(18y-30y)'],
+  ['adultMale(31y-45y)', 'adultFemale(31y-45y)', "adultOthers(31y-45y)"],
+  [
+    'middleAgedMale(46y-60y)',
+    'middleAgedFemale(46y-60y)',
+    'middleAgedOthers(46y-60y)'
+  ],
+  [
+    'agedAdultMale(61y-70y)',
+    'agedAdultFemale(61y-70y)',
+    "agedAdultOthers(61y-70y)"
+  ],
+  ['oldAgedMale(71Y-80Y)', 'oldAgedFemale(71Y-80Y)', 'oldAgedOthers(71Y-80Y)'],
   ['80+Male', '80+female', '80+Others']
 ];
 
+List flowName = [
+  ["NeoNatal"],
+  ["Toddler"],
+  ["Pediatric"],
+  ["Adolescent"],
+  ['Adult (18y-30y)'],
+  ['Adult (30y-45y)'],
+  ['Middle Aged (46y-60y)'],
+  ['Aged Adult (60y-70y)'],
+  ['Old Aged (70y - 80y)'],
+  ['Old (80y +)']
+];
 
-List<String> groups = ['Select From Below','Personal', 'Social', 'Clinical History', 'Screening', 'Anemia Assessment', 'Referral'];
-List<String> inputMode = ['none','text','numeric','date','dateTime','duration','options', 'multiOptions'];
+List<String> groups = [
+  'Select From Below',
+  'Personal',
+  'Social',
+  'Clinical History',
+  'Screening',
+  'Anemia Assessment',
+  'Referral'
+];
+List<String> inputMode = [
+  'none',
+  'text',
+  'numeric',
+  'date',
+  'dateTime',
+  'duration',
+  'options',
+  'multiOptions'
+];
 List<String> mandatory = ["true", "false"];

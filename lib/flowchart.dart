@@ -12,6 +12,7 @@ import 'dashboardhomescreen.dart';
 import 'element_settings_menu.dart';
 import 'text_menu.dart';
 import 'package:flutter/rendering.dart';
+import 'globals.dart' as global;
 
 
 class flowchart extends StatefulWidget {
@@ -129,1156 +130,26 @@ class _flowchartState extends State<flowchart> {
                           ),
                         ),
                         Divider(),
-                        ListTile(
-                          title: Text('NeoNatal'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return Dialog(
-                                  child: Container(
-                                    height: MediaQuery.of(context)
-                                        .size
-                                        .height /
-                                        2.5,
-                                    width: MediaQuery.of(context)
-                                        .size
-                                        .width /
-                                        2.5,
-                                    padding: EdgeInsets.all(16.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment
-                                          .spaceEvenly,
-                                      children: <Widget>[
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder:
-                                                        (context) =>
-                                                        flowchart(
-                                                          title:
-                                                          '',
-                                                          name:
-                                                          'NeoNatal Male',
-                                                        )));
-                                          },
-                                          child: Container(
-                                            height: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .height *
-                                                0.3,
-                                            width: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .width *
-                                                0.17,
-                                            decoration:
-                                            BoxDecoration(
-                                              border: Border.all(),
-                                              color: Colors
-                                                  .blue.shade900,
-                                              borderRadius:
-                                              BorderRadius
-                                                  .circular(
-                                                  10.0),
-                                            ),
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .male_outlined,
-                                                    // Add the male icon
-                                                    size: 50.0,
-                                                    // Set the size of the icon
-                                                    color: Colors
-                                                        .white, // Set the color of the icon
-                                                  ),
-                                                  Text(
-                                                    "Male",
-                                                    style:
-                                                    TextStyle(
-                                                      color: Colors
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold,
-                                                      fontSize:
-                                                      20.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        flowchart(
-                                                            title:
-                                                            '',
-                                                            name:
-                                                            'NeoNatal Female')));
-                                          },
-                                          child: Container(
-                                            height: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .height *
-                                                0.3,
-                                            width: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .width *
-                                                0.17,
-                                            decoration:
-                                            BoxDecoration(
-                                              border: Border.all(),
-                                              color: Colors
-                                                  .blue.shade900,
-                                              borderRadius:
-                                              BorderRadius
-                                                  .circular(
-                                                  10.0),
-                                            ),
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .female_outlined,
-                                                    // Add the male icon
-                                                    size: 50.0,
-                                                    // Set the size of the icon
-                                                    color: Colors
-                                                        .white, // Set the color of the icon
-                                                  ),
-                                                  Text(
-                                                    "Female",
-                                                    style:
-                                                    TextStyle(
-                                                      color: Colors
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold,
-                                                      fontSize:
-                                                      20.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
+                        listViewInFlowChart(context, 'NeoNatal', 0),
                         Divider(),
-                        ListTile(
-                          title: Text('Toddler'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return Dialog(
-                                  child: Container(
-                                    height: MediaQuery.of(context)
-                                        .size
-                                        .height /
-                                        2.5,
-                                    width: MediaQuery.of(context)
-                                        .size
-                                        .width /
-                                        2.5,
-                                    padding: EdgeInsets.all(16.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment
-                                          .spaceEvenly,
-                                      children: <Widget>[
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder:
-                                                        (context) =>
-                                                        flowchart(
-                                                          title:
-                                                          '',
-                                                          name:
-                                                          'Toddler Male',
-                                                        )));
-                                          },
-                                          child: Container(
-                                            height: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .height *
-                                                0.3,
-                                            width: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .width *
-                                                0.17,
-                                            decoration:
-                                            BoxDecoration(
-                                              border: Border.all(),
-                                              color: Colors
-                                                  .blue.shade900,
-                                              borderRadius:
-                                              BorderRadius
-                                                  .circular(
-                                                  10.0),
-                                            ),
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .male_outlined,
-                                                    // Add the male icon
-                                                    size: 50.0,
-                                                    // Set the size of the icon
-                                                    color: Colors
-                                                        .white, // Set the color of the icon
-                                                  ),
-                                                  Text(
-                                                    "Male",
-                                                    style:
-                                                    TextStyle(
-                                                      color: Colors
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold,
-                                                      fontSize:
-                                                      20.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        flowchart(
-                                                            title:
-                                                            '',
-                                                            name:
-                                                            'Toddler Female')));
-                                          },
-                                          child: Container(
-                                            height: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .height *
-                                                0.3,
-                                            width: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .width *
-                                                0.17,
-                                            decoration:
-                                            BoxDecoration(
-                                              border: Border.all(),
-                                              color: Colors
-                                                  .blue.shade900,
-                                              borderRadius:
-                                              BorderRadius
-                                                  .circular(
-                                                  10.0),
-                                            ),
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .female_outlined,
-                                                    // Add the male icon
-                                                    size: 50.0,
-                                                    // Set the size of the icon
-                                                    color: Colors
-                                                        .white, // Set the color of the icon
-                                                  ),
-                                                  Text(
-                                                    "Female",
-                                                    style:
-                                                    TextStyle(
-                                                      color: Colors
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold,
-                                                      fontSize:
-                                                      20.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
+                        listViewInFlowChart(context, 'Toddler', 1),
                         Divider(),
-                        ListTile(
-                          title: Text('Pediatric'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return Dialog(
-                                  child: Container(
-                                    height: MediaQuery.of(context)
-                                        .size
-                                        .height /
-                                        2.5,
-                                    width: MediaQuery.of(context)
-                                        .size
-                                        .width /
-                                        2.5,
-                                    padding: EdgeInsets.all(16.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment
-                                          .spaceEvenly,
-                                      children: <Widget>[
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder:
-                                                        (context) =>
-                                                        flowchart(
-                                                          title:
-                                                          '',
-                                                          name:
-                                                          'Pediatric Male',
-                                                        )));
-                                          },
-                                          child: Container(
-                                            height: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .height *
-                                                0.3,
-                                            width: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .width *
-                                                0.17,
-                                            decoration:
-                                            BoxDecoration(
-                                              border: Border.all(),
-                                              color: Colors
-                                                  .blue.shade900,
-                                              borderRadius:
-                                              BorderRadius
-                                                  .circular(
-                                                  10.0),
-                                            ),
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .male_outlined,
-                                                    // Add the male icon
-                                                    size: 50.0,
-                                                    // Set the size of the icon
-                                                    color: Colors
-                                                        .white, // Set the color of the icon
-                                                  ),
-                                                  Text(
-                                                    "Male",
-                                                    style:
-                                                    TextStyle(
-                                                      color: Colors
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold,
-                                                      fontSize:
-                                                      20.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        InkWell(
-                                          onTap: () {
-
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        flowchart(
-                                                            title:
-                                                            '',
-                                                            name:
-                                                            'Pediatric Female')));
-                                          },
-                                          child: Container(
-                                            height: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .height *
-                                                0.3,
-                                            width: MediaQuery.of(
-                                                context)
-                                                .size
-                                                .width *
-                                                0.17,
-                                            decoration:
-                                            BoxDecoration(
-                                              border: Border.all(),
-                                              color: Colors
-                                                  .blue.shade900,
-                                              borderRadius:
-                                              BorderRadius
-                                                  .circular(
-                                                  10.0),
-                                            ),
-                                            child: Center(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .female_outlined,
-                                                    // Add the male icon
-                                                    size: 50.0,
-                                                    // Set the size of the icon
-                                                    color: Colors
-                                                        .white, // Set the color of the icon
-                                                  ),
-                                                  Text(
-                                                    "Female",
-                                                    style:
-                                                    TextStyle(
-                                                      color: Colors
-                                                          .white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold,
-                                                      fontSize:
-                                                      20.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
+                        listViewInFlowChart(context, 'Pediatric', 2),
                         Divider(),
-                        ListTile(
-                          title: Text('Adolescent'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: "Adolescent Male")));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: "Adolescent Female",)));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            );},
-                        ),
+                        listViewInFlowChart(context, 'Adolescent', 3),
                         Divider(),
-                        ListTile(
-                          title: Text('Adult(18-30)'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: "adultMale(18y-30y)")));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: "Adult(18-30)Male")));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: "adultFemale(18y-30y)",)));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: "Adult(18-30)Female",)));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            );},
-                        ),
+                        listViewInFlowChart(context, 'Adult (18y-30y)', 4),
                         Divider(),
-                        ListTile(
-                          title: Text('Adult(31-45)Male'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            // Navigate to QuestionAdd class
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'adultMale(31y-45y)')));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'Adult(31-45)Male')));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.push( context, MaterialPageRoute( builder: (context) => flowchart( title: '', name: 'adultFemale(31y-45y)')));
-                                              // Navigator.push( context, MaterialPageRoute( builder: (context) => flowchart( title: '', name: 'Adult(31-45)Male')));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            ); },
-                        ),
+                        listViewInFlowChart(context, 'Adult (30y-45y)', 5),
                         Divider(),
-                        ListTile(
-                          title: Text('MiddleAgedAdult(46-60)'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'middleAgedMale(46y-60y)')));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'MiddleAgedAdult(46-60)Male')));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'middleAgedFemale(46y-60y)',)));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'MiddleAgedAdult(46-60)Female',)));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            );},
-                        ),
+                        listViewInFlowChart(context, 'Middle Aged (46y-60y)', 6),
                         Divider(),
-                        ListTile(
-                          title: Text('AgedAdult(60-70)'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'agedAdultMale(61y-70y)')));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'AgedAdult(60-70)Male')));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'agedAdultFemale(61y-70y)',)));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'AgedAdult(60-70)Female',)));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            ); },
-                        ),
+                        listViewInFlowChart(context, 'Aged Adult (60y-70y)', 7),
                         Divider(),
-                        ListTile(
-                          title: Text('Aged(70-80)'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'oldAgedMale(71Y-80Y)')));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'Aged(70-80)Male')));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'oldAgedFemale(71Y-80Y)',)));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'Aged(70-80)Female',)));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            );},
-                        ),
+                        listViewInFlowChart(context, 'Old Aged (70y - 80y)', 8),
                         Divider(),
-                        ListTile(
-                          title: Text('Aged(80+)'),
-                          trailing: Icon(Icons.arrow_right_alt_outlined,color: Colors.blue.shade900,),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: MediaQuery.of(context).size.height / 2.5,
-                                      width: MediaQuery.of(context).size.width / 2.5,
-                                      padding: EdgeInsets.all(16.0),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap:(){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: '80+Male')));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'Aged(80+)Male')));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.male_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Male",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: '80+female',)));
-                                              // Navigator.push(context, MaterialPageRoute(builder: (context) => flowchart(title: '', name: 'Aged(80+)Male',)));
-                                            },
-                                            child: Container(
-                                              height: MediaQuery.of(context).size.height * 0.3,
-                                              width: MediaQuery.of(context).size.width * 0.17,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(),
-                                                color: Colors.blue.shade900,
-                                                borderRadius: BorderRadius.circular(10.0),
-                                              ),
-                                              child: Center(
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.female_outlined, // Add the male icon
-                                                      size: 50.0, // Set the size of the icon
-                                                      color: Colors.white, // Set the color of the icon
-                                                    ),
-                                                    Text(
-                                                      "Female",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 20.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            );},
-                        ),
+                        listViewInFlowChart(context, 'Old (80y +)', 9),
                         Divider(),
-
                       ],
                     ),
                   ),
@@ -1612,4 +483,161 @@ class _flowchartState extends State<flowchart> {
       ),
     );
   }
+
+  Widget listViewInFlowChart(BuildContext context, String flowname, int index) {
+    return ListTile(
+      title: Text(flowname),
+      trailing: Icon(Icons.arrow_right_alt_outlined, color: Colors.blue.shade900),
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Dialog(
+              child: Container(
+                height: MediaQuery.of(context).size.height / 2.5,
+                width: MediaQuery.of(context).size.width * 0.6,
+                padding: EdgeInsets.all(16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => flowchart(
+                              title: '',
+                              name: global.flow[index][0], // Make sure 'index' is defined or passed as a parameter
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.17,
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                          color: Colors.blue.shade900,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.male_outlined,
+                                size: 50.0,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                "Male",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => flowchart(
+                              title: '',
+                              name: global.flow[index][1],
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.17,
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                          color: Colors.blue.shade900,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.female_outlined,
+                                size: 50.0,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                "Female",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => flowchart(
+                              title: '',
+                              name: global.flow[index][2],
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.17,
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                          color: Colors.blue.shade900,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.transgender_outlined,
+                                size: 50.0,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                "Others",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+
+
 }
+
+
