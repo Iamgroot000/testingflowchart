@@ -9,14 +9,14 @@ enum ElementKind {
   diamond,
   storage,
   oval,
-  parallelogram,
+  parallelogram, hexagon, custom, polygon,
 }
 
 enum Handler {
   topCenter,
   bottomCenter,
   rightCenter,
-  leftCenter,
+  leftCenter, bottomLeft, bottomRight, topLeft, topRight,
 }
 
 /// Class to store [ElementWidget]s and notify its changes

@@ -1,3 +1,4 @@
+import 'package:testingflowchart/plugin/plugin/src/objects/hexagon_widget.dart';
 import 'package:testingflowchart/plugin/plugin/src/objects/oval_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -80,9 +81,13 @@ class _ElementWidgetState extends State<ElementWidget> {
       case ElementKind.parallelogram:
         element = ParallelogramWidget(element: widget.element);
         break;
+       case ElementKind.hexagon:
+        element = HexagonWidget(element: widget.element);
+        break;
       case ElementKind.rectangle:
       default:
         element = RectangleWidget(element: widget.element);
+
     }
 
     if (widget.element.isResizing) {

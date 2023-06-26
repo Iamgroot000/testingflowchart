@@ -1,7 +1,6 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import '../flowchart.dart';
-import 'flowChartModel.dart';
 import 'globals.dart' as global;
 
 class SimpleUI extends StatefulWidget {

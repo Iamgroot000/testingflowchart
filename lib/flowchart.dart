@@ -444,6 +444,33 @@ class _flowchartState extends State<flowchart> {
                       Handler.topCenter,
                     ]));
               }),
+
+          ActionChip(
+            label: const Text('Add hexagon'),
+            onPressed: () {
+              dashboard.addElement(FlowElement(
+                position: position - const Offset(50, 25),
+                size: const Size(100, 100), // Adjust size as needed
+                text: '${dashboard.elements.length}',
+                kind: ElementKind.hexagon, // Set kind to "polygon" for a hexagon
+                handlers: [
+                  Handler.bottomLeft,
+                  Handler.bottomRight,
+                  Handler.topLeft,
+                  Handler.topRight,
+                  Handler.leftCenter,
+                  Handler.rightCenter,
+                ],
+              ));
+            },
+          ),
+
+
+
+
+
+
+
           ActionChip(
               label: const Text('Add storage'),
               onPressed: () {
