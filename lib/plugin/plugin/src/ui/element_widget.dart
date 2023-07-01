@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 
 
 import '../../flutter_flow_chart.dart';
+import '../objects/documentsymbol.dart';
+import '../objects/multipiledocument.dart';
 import '../objects/parallelogram_widget.dart';
+import '../objects/summoningjunctionsymbol.dart';
 import 'element_handlers.dart';
 import '../objects/diamond_widget.dart';
 import '../objects/rectangle_widget.dart';
@@ -81,9 +84,20 @@ class _ElementWidgetState extends State<ElementWidget> {
       case ElementKind.parallelogram:
         element = ParallelogramWidget(element: widget.element);
         break;
-       case ElementKind.hexagon:
+      case ElementKind.hexagon:
         element = HexagonWidget(element: widget.element);
         break;
+        case ElementKind.summoningJunction:
+        element = SummoningWidget(element: widget.element);
+        break;
+      case ElementKind.multipleDocument:
+        element = MultiDocumentsymbol(element: widget.element);
+        break;
+
+      case ElementKind.documentSymbol:
+        element =Documentsymbol(element: widget.element);
+        break;
+
       case ElementKind.rectangle:
       default:
         element = RectangleWidget(element: widget.element);

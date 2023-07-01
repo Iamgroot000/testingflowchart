@@ -88,6 +88,17 @@ class _SimpleUIState extends State<SimpleUI> {
                     },
                   ),
                   const Divider(),
+                  ListTile(
+                    title: const Text('testing'),
+                    onTap: () {
+                      // Navigate to QuestionAdd class
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                              const flowchart(title: '', name: 'test123#')));
+                    },
+                  ),
                 ],
               ),
             ),

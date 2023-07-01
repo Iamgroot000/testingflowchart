@@ -198,8 +198,8 @@ class Dashboard extends ChangeNotifier {
   }
 
   /// Add the element to a group [element]
-  Future<void> addElementToGroup(
-      BuildContext context, FlowElement element) async {
+  Future<void> addElementToGroup(BuildContext context,
+      FlowElement element) async {
     // Show a dialog to select a group
     String selectedGroup = global.groups.first;
 
@@ -514,7 +514,6 @@ class Dashboard extends ChangeNotifier {
           .update(jsonMap);
 
 
-
       // await FirebaseFirestore.instance
       //     .collection("TESTING")
       //     .doc('anaemiaAssessment')
@@ -541,7 +540,6 @@ class Dashboard extends ChangeNotifier {
       //     .collection("flowCharts")
       //     .doc('Adult Pregnent')
       //     .set(jsonMap);
-
 
 
       // await FirebaseFirestore.instance
@@ -575,7 +573,6 @@ class Dashboard extends ChangeNotifier {
       //     .collection("flowCharts")
       //     .doc('PNC_Registration')
       //     .set(jsonMap);
-
 
 
       // await FirebaseFirestore.instance
@@ -748,7 +745,6 @@ class Dashboard extends ChangeNotifier {
           .get();
 
 
-
       // await FirebaseFirestore.instance
       //     .collection("TESTING")
       //     .doc(docref)
@@ -782,4 +778,6 @@ class Dashboard extends ChangeNotifier {
       print("Error loading dashboard from Firestore: $e");
     }
   }
+
+
 }

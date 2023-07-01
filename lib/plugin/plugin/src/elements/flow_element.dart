@@ -9,7 +9,7 @@ enum ElementKind {
   diamond,
   storage,
   oval,
-  parallelogram, hexagon, custom, polygon,
+  parallelogram, hexagon, custom, polygon, summoningJunction, multipleDocument, documentSymbol,
 }
 
 enum Handler {
