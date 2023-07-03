@@ -123,9 +123,9 @@ class FlowElement extends ChangeNotifier {
     this.borderColor = Colors.blue,
     this.borderThickness = 3,
     this.elevation = 4,
-    next,
+    next, this.id = "",
   })  : next = next ?? [],
-        id = '',
+        // id = '',
         isResizing = false;
 
   @override

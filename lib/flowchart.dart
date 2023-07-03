@@ -35,6 +35,9 @@ class _flowchartState extends State<flowchart> {
   FlowElement? finalShape;
 
 
+  List<FlowElement> copiedShapes =  [];
+
+
 
 
 
@@ -347,13 +350,26 @@ class _flowchartState extends State<flowchart> {
             child: Text('isMandatory -------> ${element.isMandatory}'),
           ),
           InkWell(
-            onTap: () {
-              copiedShape = element as FlowElement?;  // Store the selected shape in a variable
-              copiedShape?.text = element.text + 'a'; // Modify the text of the copied shape
-              copiedShape?.position = element.position / 4 + element.position / 4; // Update the position of the copied shape
-              finalShape = copiedShape; // Assign the copied shape as the final shape
 
-              // Show a snackbar notification to indicate that the shape is copied
+            onTap: () {
+              int i = 4;
+              final copiedShape = FlowElement(
+                // Copy the properties from the original element
+                size: element.size,
+                backgroundColor: element.backgroundColor,
+                elevation: element.elevation,
+                borderColor: element.borderColor,
+                borderThickness: element.borderThickness,
+                handlers: element.handlers,
+                kind: element.kind,
+
+                text: element.text + 'a',
+                id: UniqueKey().toString(),
+                position: position - Offset(50, 25) + Offset((120 * i) as double, 0), // Adjust the values as per your requirements
+
+              );
+
+              copiedShapes.add(copiedShape); // Store the copied shape in the list
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text('Shape copied!'),
@@ -426,8 +442,6 @@ class _flowchartState extends State<flowchart> {
                       Handler.rightCenter,
                     ]));
               }),
-
-
           ActionChip(
               label: const Text('Add rect'),
               onPressed: () {
@@ -439,8 +453,6 @@ class _flowchartState extends State<flowchart> {
                     handlers: [
                       Handler.bottomCenter,
                       Handler.topCenter,
-                      Handler.leftCenter,
-                      Handler.rightCenter,
                     ]));
               }),
           ActionChip(
@@ -458,118 +470,91 @@ class _flowchartState extends State<flowchart> {
                       Handler.rightCenter,
                     ]));
               }),
-          ActionChip(
-            label: const Text('summoningjunction'),
-            onPressed: () {
-              // Logic to add a new circle element
-              final newElement = FlowElement(
-                position: position - const Offset(50, 50),
-                size: const Size.fromRadius(40), // Set the size for the circle
-                text: '${dashboard.elements.length}',
-                kind: ElementKind.summoningJunction,
-                handlers: [
-                  Handler.leftCenter,
-                ],
-              );
-              dashboard.addElement(newElement);
-            },
-          ),
+          // ActionChip(
+          //     label: const Text('Add display symbol'),
+          //     onPressed: () {
+          //       dashboard.addElement(FlowElement(
+          //           position: position - const Offset(50, 25),
+          //           size: const Size(100, 50),
+          //           text: '${dashboard.elements.length}',
+          //           kind: ElementKind.displaySymbol,
+          //           handlers: [
+          //             Handler.bottomCenter,
+          //             Handler.topCenter,
+          //             // Handler.leftCenter,
+          //             // Handler.rightCenter,
+          //           ]));
+          //     }),
 
+          // ActionChip(
+          //   label: const Text('Add circle'),
+          //   onPressed: () {
+          //     // Logic to add a new circle element
+          //     final newElement = FlowElement(
+          //       position: position - const Offset(25, 25),
+          //       size: const Size.fromRadius(20), // Set the size for the circle
+          //       text: '${dashboard.elements.length}',
+          //       kind: ElementKind.circle,
+          //       handlers: [
+          //         Handler.leftCenter,
+          //       ],
+          //     );
+          //     dashboard.addElement(newElement);
+          //   },
+          // ),
 
-          /*ActionChip(
-            label: const Text('Add summoning symbol'),
-            onPressed: () {
-              dashboard.addElement(
-                FlowElement(
-                  position: position - const Offset(50, 25),
-                  size: const Size(100, 50),
-                  text: '${dashboard.elements.length}',
-                  kind: ElementKind.DocumentSymbol,
-                  handlers: [
-                    Handler.bottomCenter,
-                    Handler.topCenter,
-                  ],
-                ),
-              );
-            },
-          ),*/
-
-
-          ActionChip(
-            label: const Text('Add hexagon'),
-            onPressed: () {
-              dashboard.addElement(FlowElement(
-                position: position - const Offset(50, 25),
-                size: const Size(100, 100), // Adjust size as needed
-                text: '${dashboard.elements.length}',
-                kind: ElementKind.hexagon, // Set kind to "polygon" for a hexagon
-                handlers: [
-                  Handler.bottomLeft,
-                  Handler.bottomRight,
-                  Handler.topLeft,
-                  Handler.topRight,
-                  Handler.leftCenter,
-                  Handler.rightCenter,
-                ],
-              ));
-            },
-          ),
-
+          // ActionChip(
+          //   label: const Text('Add hexagon'),
+          //   onPressed: () {
+          //     final double size = 100; // Replace with the desired size
+          //     final double handlerSize = size / 10; // Adjust the handler size based on the shape's size
+          //
+          //     dashboard.addElement(FlowElement(
+          //       position: position - const Offset(50, 50),
+          //       size: Size(size, size),
+          //       text: '${dashboard.elements.length}',
+          //       kind: ElementKind.hexagon,
+          //       handlers: [
+          //         Handler.bottomCenter,
+          //         Handler.topCenter,
+          //         Handler.topRightHexa,
+          //         Handler.bottomLeftHexa,
+          //         Handler.bottomRightHexa,
+          //         Handler.topLeftHexa
+          //       ],
+          //     ));
+          //   },
+          // ),
 
           ActionChip(
-            label: const Text('Add document symbol'),
-            onPressed: () {
-              dashboard.addElement(FlowElement(
-                position: position - const Offset(50, 25),
-                size: const Size(100, 100), // Adjust size as needed
-                text: '${dashboard.elements.length}',
-                kind: ElementKind.documentSymbol, // Set kind to "document"
-                handlers: [
-                  Handler.bottomLeft,
-                  Handler.bottomRight,
-                  Handler.topLeft,
-                  Handler.topRight,
-                  // Handler.leftCenter,
-                  // Handler.rightCenter,
-                ],
-              ));
-            },
-          ),
-
-
-
-
-          ActionChip(
-            label: const Text('multiple document symbols'),
-            onPressed: () {
-              const int symbolCount = 5; // Number of document symbols to add
-
-              for (int i = 0; i < symbolCount; i++) {
+              label: const Text('Add parallelogram'),
+              onPressed: () {
                 dashboard.addElement(FlowElement(
-                  position: position - Offset(50, 25) + Offset((120 * i) as double, 0), // Adjust position as needed
-                  size: const Size(100, 100), // Adjust size as needed
-                  text: '${dashboard.elements.length}',
-                  kind: ElementKind.multipleDocument, // Set the desired kind for the document symbol
-                  handlers: [
-                    Handler.bottomLeft,
-                    Handler.bottomRight,
-                    Handler.topLeft,
-                    Handler.topRight,
-                    Handler.leftCenter,
-                    Handler.rightCenter,
-                  ],
-                ));
-              }
-            },
-          ),
-
-
-
-
-
-
-
-
+                    position: position - const Offset(50, 25),
+                    size: const Size(100, 50),
+                    text: '${dashboard.elements.length}',
+                    kind: ElementKind.parallelogram,
+                    handlers: [
+                      Handler.bottomCenter,
+                      Handler.topCenter,
+                    ]));
+              }),
+          // ActionChip(
+          //     label: const Text('Add pentagon'),
+          //     onPressed: () {
+          //       dashboard.addElement(FlowElement(
+          //           position: position - const Offset(10, 10),
+          //           size: const Size(100, 100),
+          //           text: '${dashboard.elements.length}',
+          //           kind: ElementKind.pentagon,
+          //           handlers: [
+          //             Handler.topCenter,
+          //             Handler.topRightPenta,
+          //             Handler.topLeftPenta,
+          //             Handler.bottomRightPenta,
+          //             Handler.bottomLeftPenta,
+          //           ]));
+          //     }),
           ActionChip(
               label: const Text('Add storage'),
               onPressed: () {
@@ -584,6 +569,36 @@ class _flowchartState extends State<flowchart> {
                       Handler.rightCenter,
                     ]));
               }),
+          // ActionChip(
+          //     label: const Text('Add Document Shape'),
+          //     onPressed: () {
+          //       dashboard.addElement(FlowElement(
+          //           position: position - const Offset(50, 25),
+          //           size: const Size(180, 150),
+          //           text: '${dashboard.elements.length}',
+          //           kind: ElementKind.document,
+          //           handlers: [
+          //             Handler.bottomCenterDoc,
+          //             Handler.topCenter,
+          //             // Handler.leftCenter,
+          //             // Handler.rightCenter,
+          //           ]));
+          //     }),
+          // ActionChip(
+          //     label: const Text('Add Multiple Document Shape'),
+          //     onPressed: () {
+          //       dashboard.addElement(FlowElement(
+          //           position: position - const Offset(50, 25),
+          //           size: const Size(180, 150),
+          //           text: '${dashboard.elements.length}',
+          //           kind: ElementKind.multipleDisplaySymbol,
+          //           handlers: [
+          //             Handler.bottomCenterMultiDoc,
+          //             Handler.topCenterMultiDoc,
+          //             // Handler.leftCenter,
+          //             // Handler.rightCenter,
+          //           ]));
+          //     }),
           // ActionChip(
           //     label: const Text('Remove all'),
           //     onPressed: () {
@@ -606,11 +621,74 @@ class _flowchartState extends State<flowchart> {
                 dashboard.loadDashboard(docref);
               }),
           ActionChip(
-              label: const Text('Paste shape'),
-              onPressed: () async {
-                print(finalShape?.kind);
-                dashboard.addElement(finalShape!);
-              }),
+            label: const Text('Paste shape'),
+            onPressed: () async {
+              int numElements = 0;
+              await showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Paste element'),
+                    content: TextField(
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        numElements = int.tryParse(value) ?? 0;
+                      },
+                      decoration: InputDecoration(
+                        labelText: 'Number of elements to paste',
+                      ),
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        child: Text('Cancel'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: Text('Paste'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          int startingIndex = 0;
+                          for (int i = 0; i < numElements; i++) {
+                            for (final copiedShape in copiedShapes) {
+                              final incrementedIndex = startingIndex + i;
+                              final incrementedText = copiedShape.text + incrementedIndex.toString();
+                              final incrementedId = copiedShape.id + incrementedIndex.toString();
+                              final incrementedPosition = copiedShape.position + Offset((120 * i) as double, 0);
+
+                              final newShape = FlowElement(
+                                // Copy the properties from the original element
+                                size: copiedShape.size,
+                                backgroundColor: copiedShape.backgroundColor,
+                                elevation: copiedShape.elevation,
+                                borderColor: copiedShape.borderColor,
+                                borderThickness: copiedShape.borderThickness,
+                                handlers: copiedShape.handlers,
+                                kind: copiedShape.kind,
+                                text: incrementedText,
+                                id: incrementedId,
+                                position: incrementedPosition,
+                              );
+
+                              dashboard.addElement(newShape);
+                            }
+                          }
+
+                          copiedShapes.clear(); // Clear the copiedShapes list after pasting
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+          )
+
+
+
+
+
         ],
       ),
     );
